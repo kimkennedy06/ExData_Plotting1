@@ -13,3 +13,5 @@ specificDates<-"Select * from file where Date='1/2/2007' or Date='2/2/2007'"
 #Create data frame with only the lines with specific dates found from SQL
 PowerConsumption<-read.csv2.sql("household_power_consumption.txt",sql=specificDates,header=TRUE,sep=";")
 
+#Create Histogram of Global_active_power
+with(PowerConsumption,hist(Global_active_power,main="Global Active Power",col="red",xlab="Global Active Power (kilowatts)",ylab="Frequency"))
