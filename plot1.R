@@ -17,4 +17,5 @@ PowerConsumption<-read.csv2.sql("household_power_consumption.txt",sql=specificDa
 png(file="plot1.png",width=480,height=480,units="px")
 #Create Histogram of Global_active_power
 with(PowerConsumption,hist(Global_active_power,main="Global Active Power",col="red",xlab="Global Active Power (kilowatts)",ylab="Frequency"))
+#Close png device
 dev.off
