@@ -22,7 +22,7 @@ PowerConsumption$DateTime<-as.Date(PowerConsumption$DateTime,'%d/%m/%Y %H:%M:%S'
 PowerConsumption<-PowerConsumption[,-c(1,2)]
 
 #Reorder so that DateTime is first
-PowerConsumption<-PowerConsumption[,c(length(PowerConsumption),3:length(PowerConsumption)-1)]
+PowerConsumption<-PowerConsumption[,c(length(PowerConsumption),1:length(PowerConsumption)-1)]
 
 #Open png device and create 'plot1.png' in present working directory
 png(file="plot1.png",width=480,height=480,units="px")
