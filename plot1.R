@@ -16,7 +16,7 @@ PowerConsumption<-read.csv2.sql("household_power_consumption.txt",sql=specificDa
 PowerConsumption$DateTime<-sapply(PowerConsumption,function(x)paste(PowerConsumption$Date,PowerConsumption$Time,sep=" "))[,1]
 
 #Change Class of DateTime to class Date
-PowerConsumption$DateTime<-as.Date(PowerConsumption$DateTime,'%d/%m/%Y %H:%M:%S')
+PowerConsumption$DateTime<-strptime(PowerConsumption$DateTime,'%d/%m/%Y %H:%M:%S')
 
 #Remove Date and Time columns since created merged column of date and time
 PowerConsumption<-PowerConsumption[,-c(1,2)]
