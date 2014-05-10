@@ -28,7 +28,7 @@ PowerConsumption<-PowerConsumption[,c(length(PowerConsumption),1:length(PowerCon
 
 #Open png device and create 'plot2.png' in present working directory
 png(file="plot2.png",width=480,height=480,units="px")
-#Create Histogram of Global_active_power
+#Create Line Plot of Global Active Power over DateTime with y-axis label
 with(PowerConsumption,plot(DateTime,Global_active_power,xlab="",ylab="Global Active Power (kilowatts)",type="l"))
 #Close png device
 dev.off()
