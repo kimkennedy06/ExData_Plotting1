@@ -26,14 +26,15 @@ PowerConsumption<-PowerConsumption[,-c(1,2)]
 #Reorder so that DateTime is first
 PowerConsumption<-PowerConsumption[,c(length(PowerConsumption),1:length(PowerConsumption)-1)]
 
-
-
 #Open png device and create 'plot2.png' in present working directory
-png(file="plot2.png",width=480,height=480,units="px")
-#Create Histogram of Global_active_power
+png(file="plot3.png",width=480,height=480,units="px")
+#Create Line Plot of Sub_metering_1 over DateTime with y-axis label
 with(PowerConsumption,plot(DateTime,Sub_metering_1,xlab="",ylab="Energy sub metering",type="l",col="black"))
+#Add a line to plot for Sub_metering_2 over DateTime
 lines(PowerConsumption$DateTime,PowerConsumption$Sub_metering_2,type="l",col="red")
+#Add a line to plot for Sub_metering_3 over DateTime
 lines(PowerConsumption$DateTime,PowerConsumption$Sub_metering_3,type="l",col="blue")
+#Add a legend to specify what each line on the graph associates with each Sub_metering
 legend("topright",lwd=1,col=c("black","red","blue"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
 #Close png device
 dev.off()
