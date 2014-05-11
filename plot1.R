@@ -14,7 +14,8 @@ specific.dates <- "Select * from file where Date='1/2/2007' or Date='2/2/2007'"
 power.consumption <- read.csv2.sql("household_power_consumption.txt",
                                    sql=specificDates,
                                    header=TRUE,
-                                   sep=";")
+                                   sep=";"
+                                   )
 
 #Create column that combines Date and Time columns
 power.consumption$DateTime <- sapply(power.consumption,
